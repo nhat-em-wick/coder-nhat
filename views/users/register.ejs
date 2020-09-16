@@ -1,0 +1,26 @@
+<%- include('../layouts/link'); %> 
+<body>
+    <%- include('../layouts/header'); %> 
+    <div class="container">
+      <%- include('../msg-err/msg'); %> 
+				<form action="/users/register" method="post">
+						<label for="user" class="sr-only">User</label>
+            <input type="text" name="userName" id="user" class="form-control"
+            placeholder="UserName" value="<%= typeof userName != 'undefined' ? userName : '' %> ">
+
+            <label for="email" class="sr-only">Email address</label>
+            <input type="email" id="email" name="email" class="form-control" 
+            placeholder="Email address" value="<%= typeof email != 'undefined' ? email : '' %> ">
+
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" id="password" name="password" class="form-control"
+             placeholder="Password" required="" value="<%= typeof password != 'undefined' ? password : '' %>">
+
+            <input type="password" id="password2" name="password2" class="form-control" 
+            placeholder="Conf Password" required="" value="<%= typeof password2 != 'undefined' ? password2 : '' %>">
+
+						<button class="btn btn-lg btn-primary btn-block" type="submit">Create</button>
+        </form>
+		</div>
+		<%- include('../layouts/footer'); %> 
+</body>
