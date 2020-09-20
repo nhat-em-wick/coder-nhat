@@ -16,7 +16,7 @@ app.get('/', function(req, res){
     res.render('index');
 })
 
-app.use('/users', userRoute);
+app.use('/', userRoute);
 
 
 mongoose.connect(process.env.DB_CONNECTION, function () {
